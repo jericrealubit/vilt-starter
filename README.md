@@ -1,154 +1,311 @@
-# Vilt Stack Starter
+Based on your package.json and composer.json files, I can see this is actually a **Laravel + Vue.js + Inertia.js** project, not a ViLT starter. Here's an updated README with the correct tech stack:
 
-A full-stack starter template combining Laravel, Inertia.js, Vue 3, Vite and Tailwind CSS (“Vilt”).
+````markdown
+# 🚀 Laravel Vue Inertia Starter
 
-## Features
+A modern full-stack web application starter template built with Laravel, Vue.js, and Inertia.js. Perfect for building reactive single-page applications with the power of Laravel's backend and Vue's frontend capabilities.
 
--   Backend powered by Laravel 12
--   Seamless SPA experience with Inertia.js + Vue 3
--   Modern build tooling with Vite
--   Utility-first styling with Tailwind CSS
--   Out-of-the-box Docker dev environment via Sail
--   Zero-config testing with PestPHP & PHPUnit
--   Pre-configured linting, formatting & static analysis
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PHP 8.2+](https://img.shields.io/badge/PHP-8.2+-777BB4.svg?logo=php&logoColor=white)](https://php.net)
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white)](https://laravel.com)
 
----
+## 🎯 Overview
 
-## Tech Used
+This project provides a clean, modern starting point for building full-stack web applications. It combines Laravel's robust backend framework with Vue.js's reactive frontend capabilities, connected seamlessly through Inertia.js for a true SPA experience without the API complexity.
 
-### Backend (Composer)
+## ✨ Features
 
--   PHP ^8.2
--   Laravel Framework ^12.0
--   Inertia.js adapter (inertiajs/inertia-laravel)
--   Laravel Tinker
--   Laravel Sail (Docker)
--   SQLite (local dev)
--   FakerPHP (factories)
--   PestPHP & Pest-Laravel plugin
--   PHPUnit
--   Mockery (mocks)
--   Nunomaduro Collision (pretty errors)
--   Laravel Pint (code style)
--   Laravel Pail (static analysis)
+-   🔧 **Laravel 12** - Latest Laravel framework with modern PHP features
+-   ⚡ **Vue.js 3** - Composition API and reactive frontend
+-   🔗 **Inertia.js** - Modern monolith architecture
+-   🎨 **Tailwind CSS 4** - Utility-first CSS framework
+-   ⚡ **Vite** - Lightning-fast build tool
+-   🧪 **Pest Testing** - Elegant testing framework
+-   🐳 **Laravel Sail** - Docker development environment
+-   🔄 **Hot Module Replacement** - Instant development feedback
 
-### Frontend (NPM / Vite)
+## 🛠️ Tech Stack
 
--   Vite ^6.2.4
--   laravel-vite-plugin ^1.2.0
--   @vitejs/plugin-vue ^5.2.4
--   @tailwindcss/vite ^4.0.0
--   Tailwind CSS ^4.0.0
--   Vue 3 & @inertiajs/vue3 ^2.0.11
--   @vue/server-renderer ^3.5.15
--   Axios ^1.8.2
--   concurrently ^9.0.1
+### Backend
 
----
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white)
 
-## Requirements
+### Frontend
 
--   PHP 8.2+
--   Composer
--   Node.js 16+ & npm
--   Docker (for Sail) or local MySQL/Postgres
--   Optional: CUDA/GPU if using advanced queue/workers
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Inertia.js](https://img.shields.io/badge/Inertia.js-9553E9?style=for-the-badge&logo=inertia&logoColor=white)
 
----
+### Styling & Build Tools
 
-## Installation
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 
-1. Clone and enter the repo
+### Development Tools
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Pest](https://img.shields.io/badge/Pest-6366F1?style=for-the-badge&logo=php&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+### Additional Tools
+
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![Pint](https://img.shields.io/badge/Laravel_Pint-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+
+## 🚦 Quick Start
+
+### Prerequisites
+
+-   🐘 **PHP 8.2** or higher
+-   🎼 **Composer** 2.0+
+-   📦 **Node.js 18** or higher
+-   🗄️ **Database** (MySQL, PostgreSQL, or SQLite)
+
+### Installation
+
+1. **Clone the repository**
     ```bash
-    git clone https://github.com/your-org/vilt-starter.git
+    git clone https://github.com/jericrealubit/vilt-starter.git
     cd vilt-starter
     ```
+````
 
-2. Copy and configure environment
-
-    ```bash
-    cp .env.example .env
-    ```
-
-    Generate app key & SQLite file (if using Sail):
+2. **Install PHP dependencies**
 
     ```bash
     composer install
-    php artisan key:generate
-    touch database/database.sqlite
     ```
 
-3. Install NPM deps and build assets
+3. **Install Node dependencies**
 
     ```bash
     npm install
-    npm run build
     ```
 
-4. Run migrations & seed
+4. **Environment setup**
+
     ```bash
-    php artisan migrate --seed
+    cp .env.example .env
+    php artisan key:generate
     ```
 
----
+5. **Database setup**
 
-## Development
+    ```bash
+    touch database/database.sqlite  # For SQLite
+    php artisan migrate
+    ```
 
--   Start Laravel + queue + Vite in one command:
+6. **Start development servers**
 
-```bash
-composer dev
-```
+    ```bash
+    composer run dev
+    ```
 
--   Starts `php artisan serve`
--   Listens to jobs with `php artisan queue:listen`
--   Runs Vite dev server with HMR
+    This runs all services concurrently:
 
-*   Or run back- and front-end separately:
+    - 🌐 Laravel server on `http://localhost:8000`
+    - 🔄 Queue worker for background jobs
+    - ⚡ Vite dev server with HMR
 
-```bash
-php artisan serve
-npm run dev
-```
-
----
-
-## NPM Scripts
-
--   `npm run dev` — Vite development server
--   `npm run build` — Vite production build
-
-## Composer Scripts
-
--   `composer dev` — combined Laravel serve, queue listener & Vite dev
--   `composer test` — clears config cache & runs tests
--   Auto-publish assets & migrate on `composer install`
-
----
-
-## Testing
+### 🐳 Docker Setup (Laravel Sail)
 
 ```bash
-composer test
+# Start with Sail
+./vendor/bin/sail up -d
+
+# Install dependencies inside container
+./vendor/bin/sail composer install
+./vendor/bin/sail npm install
+
+# Run migrations
+./vendor/bin/sail artisan migrate
+
+# Start dev servers
+./vendor/bin/sail npm run dev
 ```
 
-Uses PestPHP (with PHPUnit under the hood).
-Write tests in the `tests/` directory.
+## 📖 Usage Examples
+
+### Creating a New Page
+
+1. **Create a Laravel route** (`routes/web.php`):
+
+    ```php
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard', [
+            'user' => auth()->user(),
+            'stats' => ['visitors' => 1234]
+        ]);
+    });
+    ```
+
+2. **Create Vue component** (`resources/js/Pages/Dashboard.vue`):
+
+    ```vue
+    <template>
+        <div class="bg-white rounded-lg shadow p-6">
+            <h1 class="text-2xl font-bold text-gray-900">
+                Welcome, {{ user.name }}!
+            </h1>
+            <p class="mt-2 text-gray-600">
+                You have {{ stats.visitors }} visitors today.
+            </p>
+        </div>
+    </template>
+
+    <script setup>
+    defineProps({
+        user: Object,
+        stats: Object,
+    });
+    </script>
+    ```
+
+### Making API Requests
+
+```javascript
+import { router } from "@inertiajs/vue3";
+
+// Navigate with data
+router.post("/users", {
+    name: "John Doe",
+    email: "john@example.com",
+});
+
+// Or using axios for traditional AJAX
+import axios from "axios";
+
+const response = await axios.get("/api/users");
+```
+
+## 📁 Project Structure
+
+```
+laravel-vue-starter/
+├── 📁 app/                    # Laravel application logic
+│   ├── 📁 Http/Controllers/   # Request handlers
+│   ├── 📁 Models/            # Eloquent models
+│   └── 📁 Providers/         # Service providers
+├── 📁 database/              # Database files
+│   ├── 📁 migrations/        # Database migrations
+│   └── 📁 seeders/          # Database seeders
+├── 📁 resources/             # Frontend resources
+│   ├── 📁 js/               # Vue.js components
+│   │   ├── 📁 Pages/        # Inertia pages
+│   │   ├── 📁 Components/   # Reusable components
+│   │   └── 📄 app.js        # Main JS entry
+│   └── 📁 css/              # Stylesheets
+├── 📁 routes/                # Application routes
+│   ├── 📄 web.php           # Web routes
+│   └── 📄 api.php           # API routes
+├── 📁 tests/                 # Pest tests
+├── 📄 package.json          # Node dependencies
+├── 📄 composer.json         # PHP dependencies
+├── 📄 vite.config.js        # Vite configuration
+└── 📄 tailwind.config.js    # Tailwind configuration
+```
+
+## 🧪 Testing
+
+Run the test suite using Pest:
+
+```bash
+# Run all tests
+composer run test
+
+# Run specific test file
+php artisan test tests/Feature/ExampleTest.php
+
+# Run with coverage
+php artisan test --coverage
+```
+
+## 🎨 Available Scripts
+
+### Composer Scripts
+
+```bash
+composer run dev        # Start all development servers
+composer run test       # Run test suite
+```
+
+### NPM Scripts
+
+```bash
+npm run dev            # Start Vite development server
+npm run build          # Build for production
+```
+
+### Artisan Commands
+
+```bash
+php artisan serve      # Start Laravel server
+php artisan queue:work # Start queue worker
+php artisan migrate    # Run migrations
+php artisan tinker     # Laravel REPL
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. 💾 Commit your changes (`git commit -m 'Add amazing feature'`)
+4. 📤 Push to the branch (`git push origin feature/amazing-feature`)
+5. 🔄 Open a Pull Request
+
+## 📚 Documentation
+
+-   📖 [Laravel Documentation](https://laravel.com/docs)
+-   ⚡ [Vue.js Guide](https://vuejs.org/guide/)
+-   🔗 [Inertia.js Documentation](https://inertiajs.com/)
+-   🎨 [Tailwind CSS Docs](https://tailwindcss.com/docs)
+-   ⚡ [Vite Documentation](https://vitejs.dev/)
+
+## 🐛 Issues & Support
+
+If you encounter any issues or have questions:
+
+-   🐛 [Report bugs](https://github.com/jericrealubit/vilt-starter/issues)
+-   💬 [Discussions](https://github.com/jericrealubit/vilt-starter/discussions)
+-   📧 Contact: [your-email@example.com]
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+-   🔥 [Laravel Team](https://laravel.com/team)
+-   💚 [Vue.js Core Team](https://vuejs.org/about/team.html)
+-   🔗 [Inertia.js Creator](https://twitter.com/reinink)
+-   🎨 [Tailwind CSS Team](https://tailwindcss.com/team)
 
 ---
 
-## Contributing
+<div align="center">
 
-1. Fork the repo
-2. Create a feature branch
-3. Commit & push your changes
-4. Open a Pull Request
+**⭐ Star this repository if you find it helpful!**
 
-Please follow PSR-12 and run `composer test` before submitting.
+Made with ❤️ by [Jeric Realubit](https://github.com/jericrealubit)
 
----
+</div>
+```
 
-## License
+## Key Updates Made:
 
-MIT © Your Name / Your Organization
+1. **🔄 Corrected Project Type**: Changed from ViLT to Laravel+Vue+Inertia
+2. **🛠️ Updated Tech Stack**: Added proper badges for Laravel, Vue.js, Inertia.js, Tailwind CSS, etc.
+3. **📦 Package-Based Features**: Reflected actual dependencies from your files
+4. **🚀 Proper Installation**: Laravel-specific setup instructions
+5. **🐳 Sail Integration**: Added Laravel Sail Docker setup
+6. **🧪 Pest Testing**: Included Pest testing framework
+7. **⚡ Vite Configuration**: Modern build tool setup
+8. **🎨 Tailwind CSS**: Modern styling framework
+9. **📁 Laravel Structure**: Proper Laravel project structure
+10. **🔧 Development Scripts**: Both Composer and NPM scripts
