@@ -1,63 +1,154 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Vilt Stack Starter
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack starter template combining Laravel, Inertia.js, Vue 3, Vite and Tailwind CSS (“Vilt”).
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+• Backend powered by Laravel 12
+• Seamless SPA experience with Inertia.js + Vue 3
+• Modern build tooling with Vite
+• Utility-first styling with Tailwind CSS
+• Out-of-the-box Docker dev environment via Sail
+• Zero-config testing with PestPHP & PHPUnit
+• Pre-configured linting, formatting & static analysis
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tech Used
 
-## Learning Laravel
+### Backend (Composer)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+• PHP ^8.2
+• Laravel Framework ^12.0
+• Inertia.js adapter (inertiajs/inertia-laravel)
+• Laravel Tinker
+• Laravel Sail (Docker)
+• SQLite (local dev)
+• FakerPHP (factories)
+• PestPHP & Pest-Laravel plugin
+• PHPUnit
+• Mockery (mocks)
+• Nunomaduro Collision (pretty errors)
+• Laravel Pint (code style)
+• Laravel Pail (static analysis)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Frontend (NPM / Vite)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+• Vite ^6.2.4
+• laravel-vite-plugin ^1.2.0
+• @vitejs/plugin-vue ^5.2.4
+• @tailwindcss/vite ^4.0.0
+• Tailwind CSS ^4.0.0
+• Vue 3 & @inertiajs/vue3 ^2.0.11
+• @vue/server-renderer ^3.5.15
+• Axios ^1.8.2
+• concurrently ^9.0.1
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Requirements
 
-### Premium Partners
+• PHP 8.2+
+• Composer
+• Node.js 16+ & npm
+• Docker (for Sail) or local MySQL/Postgres
+• Optional: CUDA/GPU if using advanced queue/workers
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
+
+## Installation
+
+1. Clone and enter the repo
+
+    ```bash
+    git clone https://github.com/your-org/vilt-starter.git
+    cd vilt-starter
+    ```
+
+2. Copy and configure environment
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Generate app key & SQLite file (if using Sail):
+
+    ```bash
+    composer install
+    php artisan key:generate
+    touch database/database.sqlite
+    ```
+
+3. Install NPM deps and build assets
+
+    ```bash
+    npm install
+    npm run build
+    ```
+
+4. Run migrations & seed
+    ```bash
+    php artisan migrate --seed
+    ```
+
+---
+
+## Development
+
+• Start Laravel + queue + Vite in one command:
+
+```bash
+composer dev
+```
+
+– Starts `php artisan serve`
+– Listens to jobs with `php artisan queue:listen`
+– Runs Vite dev server with HMR
+
+• Or run back- and front-end separately:
+
+```bash
+php artisan serve
+npm run dev
+```
+
+---
+
+## NPM Scripts
+
+• `npm run dev` — Vite development server
+• `npm run build` — Vite production build
+
+## Composer Scripts
+
+• `composer dev` — combined Laravel serve, queue listener & Vite dev
+• `composer test` — clears config cache & runs tests
+• Auto-publish assets & migrate on `composer install`
+
+---
+
+## Testing
+
+```bash
+composer test
+```
+
+Uses PestPHP (with PHPUnit under the hood).
+Write tests in the `tests/` directory.
+
+---
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Fork the repo
+2. Create a feature branch
+3. Commit & push your changes
+4. Open a Pull Request
 
-## Code of Conduct
+Please follow PSR-12 and run `composer test` before submitting.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# realstate
-# vilt-starter
+MIT © Your Name / Your Organization
