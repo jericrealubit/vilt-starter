@@ -1,8 +1,6 @@
-Based on your package.json and composer.json files, I can see this is actually a **Laravel + Vue.js + Inertia.js** project, not a ViLT starter. Here's an updated README with the correct tech stack:
+# 🚀 Vue Inertia Laravel Tailwind (VILT) Starter
 
-# 🚀 Laravel Vue Inertia Starter
-
-A modern full-stack web application starter template built with Laravel, Vue.js, and Inertia.js. Perfect for building reactive single-page applications with the power of Laravel's backend and Vue's frontend capabilities.
+A modern full-stack web application starter template built with Laravel, Vue.js, Inertia.js, and Tailwind. Perfect for building reactive single-page applications with the power of Laravel's backend and Vue's frontend capabilities.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PHP 8.2+](https://img.shields.io/badge/PHP-8.2+-777BB4.svg?logo=php&logoColor=white)](https://php.net)
